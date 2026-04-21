@@ -94,7 +94,7 @@ for state = 0:1
     for ch = 1:3
         layer = rgb_test(:,:,ch);  layer(dotMask) = dc(ch);  rgb_test(:,:,ch) = layer;
     end
-    tfPath = fullfile(outFolder, sprintf('%s_testframe_%s.png', fstem, sfx));
+    tfPath = fullfile(outFolder, sprintf('%s_%s.png', fstem, sfx));
     imwrite(rgb_test, tfPath);
     fprintf('  %s\n', tfPath);
 end
