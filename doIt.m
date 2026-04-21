@@ -15,7 +15,7 @@ addpath(thisDir);
 p = scaledNoiseMovieWithRedFix();          % get defaults (also prints them)
 
 % ── overrides ─────────────────────────────────────────────────────────────
-p.output.folder = fullfile(thisDir, 'noise_stimulus_1min');
+p.output.folder = fullfile('~/mnt/remote/', 'noise_stimulus_1min');
 
 nRunON  = 50;
 nRunOFF = 50;
