@@ -3,6 +3,7 @@
 % and prints them to the terminal. Override specific fields here, then run.
 
 clear; close all;
+% figure('MenuBar', 'none', 'ToolBar', 'none');
 
 %% ── paths ────────────────────────────────────────────────────────────────
 thisDir = fileparts(mfilename('fullpath'));
@@ -16,6 +17,6 @@ p = scaledNoiseMovieWithRedFix();          % get defaults (also prints them)
 % ── overrides ─────────────────────────────────────────────────────────────
 p.output.folder = fullfile(thisDir, 'noise_stimulus_1min');
 
-nRunON  = 2;
-nRunOFF = 2;
+nRunON  = 50;
+nRunOFF = 50;
 scaledNoiseMovieWithRedFix(p, nRunON, nRunOFF);
