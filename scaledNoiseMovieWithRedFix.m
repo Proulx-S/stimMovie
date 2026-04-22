@@ -78,7 +78,7 @@ if exist(outFolder, 'dir')
     fprintf('Output folder exists — writing to: %s\n', outFolder);
 end
 mkdir(outFolder);
-fstem = 'scaledNoiseMovieWithRedFix';
+fstem = 'run';
 
 % ── test frames (one noise frame, low + high dot state) ───────────────────
 fprintf('Saving test frames...\n');
@@ -103,18 +103,18 @@ end
 for m = 1:nTotal
 
     if m <= nON
-        label = 'on';
+        label = 'ON';
         idx   = m;
         lo_m  = lo;
         hi_m  = hi;
     else
-        label = 'off';
+        label = 'OFF';
         idx   = m - nON;
         lo_m  = bgGray;   % contrast = 0: noise invisible
         hi_m  = bgGray;
     end
 
-    outFile = fullfile(outFolder, sprintf('%s_%s_%02d.avi', fstem, label, idx));
+    outFile = fullfile(outFolder, sprintf('%s-%02d_%s.avi', fstem, idx, label));
     fprintf('\n--- Movie %d/%d : %s ---\n', m, nTotal, outFile);
 
     statePerFrame = makeFixDotSchedule(p.temporal.durationS, p.temporal.updateHz, ...
@@ -181,7 +181,7 @@ p.spatial.fixBlankRadDeg = p.fixDot.outerRadDeg;  % blank centre-disc radius    
 p.temporal.durationS = 60;   % total movie duration   (seconds)
 p.temporal.updateHz  = 8;    % noise flicker rate     (Hz)
 
-p.output.folder        = fullfile(thisDir, 'scaledNoiseMovieWithRedFix');  % output folder
+p.output.folder        = fullfile(thisDir, 'scaledNoiseMovieWithRedFix', 'stim');  % output folder
 p.output.quality       = 95;   % JPEG quality for Motion JPEG AVI (0–100)
 end
 

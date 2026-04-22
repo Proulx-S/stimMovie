@@ -15,7 +15,8 @@ addpath(thisDir);
 p = scaledNoiseMovieWithRedFix();          % get defaults (also prints them)
 
 % ── overrides ─────────────────────────────────────────────────────────────
-p.output.folder = fullfile('~/mnt/remote/', 'noise_stimulus_1min');
+p.output.folder = fullfile('~/RemoteServer/takoyakiLocal/stim', '/scaledNoiseMovieWithRedFix/stim');
+p.temporal.durationS = 120; % seconds
 
 nRunON  = 50;
 nRunOFF = 50;
