@@ -19,7 +19,8 @@ p.output.folder = fullfile('/local/users/Proulx-S/stim', 'scaledNoiseMovieWithRe
 % p.output.folder = fullfile('~/RemoteServer/takoyakiLocal/stim', 'scaledNoiseMovieWithRedFix/stim');
 p.temporal.durationS =  120; % seconds
 p.output.quality     =   70; % JPEG quality for Motion JPEG AVI (0–100)
-p.fixDot.contrast    = 0.75; % contrast of the red fixation dot (0–1)
+p.fixDot.contrast    = 0.75; % step reduction in color contrast (chroma) of the red fixation dot (0–1)
+p.fixDot.L           =   40;   % LCH lightness of fixation dot  (L*) (0–100)
 
 nRunON  = 30;
 nRunOFF = 30;

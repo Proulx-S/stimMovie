@@ -58,7 +58,7 @@ dotMask   = d2 <= (round(p.fixDot.radDeg      / pix2deg))^2;
 outerMask = d2 <= (round(p.fixDot.outerRadDeg / pix2deg))^2;
 
 fprintf('Computing fixation dot colours in LCH space...\n');
-fixDotL = 50;
+fixDotL = p.fixDot.L;
 Cmax    = lchMaxChroma(fixDotL, p.fixDot.hueDeg);
 fprintf('  LCH: L=%.0f, H=%.0f deg, C_max=%.1f\n', fixDotL, p.fixDot.hueDeg, Cmax);
 
@@ -166,6 +166,7 @@ p.monitor.screenW = 1920;   % screen width          (pixels)
 p.monitor.screenH = 1080;   % screen height         (pixels)
 p.monitor.Hz      = 60;     % display refresh rate  (Hz, informational only)
 
+p.fixDot.L           = 50;                         % LCH lightness of fixation dot  (L*)
 p.fixDot.hueDeg      = 40;                         % LCH hue angle, 40 for red  (degrees)
 p.fixDot.contrast    = 0.5;                        % low-state saturation = 1 - contrast
 p.fixDot.radDeg      = 0.15;                       % inner (coloured) dot radius (degrees)
