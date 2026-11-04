@@ -1,4 +1,6 @@
 *.avi
+# agent worktrees: never commit one (a live worktree becomes a gitlink)
+.claude/worktrees/
 
 # scratch/ -- THE canonical place for throwaway agent/dev scratch (probe scripts, run logs, one-off
 # verification files). Per Seb 2026-09-05: throwaway scratch belongs INSIDE the repo/worktree so
